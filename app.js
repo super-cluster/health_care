@@ -63,9 +63,10 @@ app.post("/register/patient",(req,res)=>{
         if (err) { 
           res.status(500).json({message:err.message});
         }else{ 
-            // passport.authenticate("local")(req,res,()=>{
+            passport.authenticate("local")(req,res,()=>{
                 res.status(200).json({user});
-            } 
+            })
+        } 
       }); 
 })
 
@@ -95,7 +96,7 @@ app.post("/register/doctor",(req,res)=>{
             passport.authenticate("local")(req,res,()=>{
                 res.status(200).json({user});
             })
-        }  
+        } 
       }); 
 });
 
