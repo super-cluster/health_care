@@ -40,13 +40,13 @@ app.use(BodyParser.urlencoded({extended:true}));
 
 app.post("/register/patient",(req,res)=>{
     var name =req.body.name;
-    var email =req.body.email;
+    var email =req.body.username;
     var password =req.body.password;
     var dob =req.body.dob;
     var gender =req.body.gender;
     var bloodgroup =req.body.bloodgroup;
 
-    console.log(req.body.name);
+    console.log(req.body.username);
 
     const user =new Patient({
         name:name,
@@ -58,13 +58,14 @@ app.post("/register/patient",(req,res)=>{
         type:"patient"
         
     });
+    console.log(user);
 
     Patient.register(user, password, function(err, user) { 
         if (err) { 
-          res.status(500).json({message:err.message});
+          res.status(500).json({message:err});
         }else{ 
             passport.authenticate("local")(req,res,()=>{
-                res.status(200).json({user});
+                res.redirect("/dashboard");
             })
         } 
       }); 
@@ -72,7 +73,7 @@ app.post("/register/patient",(req,res)=>{
 
 app.post("/register/doctor",(req,res)=>{
     var name =req.body.name;
-    var email =req.body.email;
+    var email =req.body.username;
     var password =req.body.password;
     var gender =req.body.gender;
     var qualifications =req.body.qualifications;
@@ -94,7 +95,7 @@ app.post("/register/doctor",(req,res)=>{
           res.status(500).json({message:err.message});
         }else{ 
             passport.authenticate("local")(req,res,()=>{
-                res.status(200).json({user});
+                res.redirect("/dashboard");
             })
         } 
       }); 
@@ -114,7 +115,7 @@ app.post("/login/patient",(req,res)=>{
         }else{
             passport.authenticate("local")(req,res,()=>{
                 res.redirect("/dashboard");
-            })
+            });
         }
     });
 
@@ -134,7 +135,7 @@ app.post("/login/patient",(req,res)=>{
             }else{
                 passport.authenticate("local")(req,res,()=>{
                     res.redirect("/dashboard");
-                })
+                });
             }
         });
 
