@@ -158,17 +158,16 @@ app.get("/profile",(req,res)=>{
 
 app.get("/dashboard",(req,res)=>{
     // if(req.isAuthenticated()){
-            res.render("dashboard")
-<<<<<<< HEAD
+            res.render("dashboard");
     // }
     // else{
     //         res.send("Error");
     // }
-=======
-    }else{
-            res.redirect("/");
-    }
->>>>>>> c4a7e5f0359b418c894b4d2dec9e3dd91ea57109
+
+    // }else{
+    //         res.redirect("/");
+    // }
+
 });
 
 app.post("/getDoctors",(req,res)=>{
