@@ -63,11 +63,14 @@
             <div class="main-section" style="overflow: scroll;">
              <div class="hospital-container">
                 <h2 class="heading-primary">
-                    Search Doctors
+                    Search Hospitals Nearby
                 </h2>
                 <button class ="search" style="align-self: center;">Search</button>
+                    <div id="map">
+
+                    </div>
                     <div class="search-hospital-result">
-                        <h2 class="heading-primary">Doctors</h2>
+                        <h2 class="heading-primary">Hospitals Nearby</h2>
                         <div class="search-result">
                             <ul class="search-result-list">
                                 <li class="search-item">
@@ -85,5 +88,32 @@
              </div>
         </div>
     </main>
+    <script>
+       
+
+        // Initialize and add the map
+        function initMap() {
+          // The location of Uluru
+
+          navigator.geolocation.getCurrentPosition((position)=>{
+            console.log(position.coords);
+            const myposition = {lat:position.coords.latitude,lng:position.coords.longitude};
+            // const uluru = { lat: -25.344, lng: 131.036 };
+          // The map, centered at Uluru
+          const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 15,
+            center: myposition,
+          });
+          // The marker, positioned at Uluru
+          const marker = new google.maps.Marker({
+            position: myposition,
+            map: map,
+          });
+        },(err)=>{
+            console.log(err.message);
+        });
+         
+        }
+      </script>
 </body>
 </html>

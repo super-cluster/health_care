@@ -157,6 +157,7 @@ app.get("/profile",(req,res)=>{
 });
 
 app.get("/dashboard",(req,res)=>{
+<<<<<<< HEAD
     // if(req.isAuthenticated()){
             res.render("dashboard");
     // }
@@ -168,15 +169,34 @@ app.get("/dashboard",(req,res)=>{
     //         res.redirect("/");
     // }
 
+=======
+    if(req.isAuthenticated()){
+            res.render("dashboard");
+    }else{
+            res.redirect("/");
+    }
+>>>>>>> b2de09720717037f5fd3726bdcd087b4d1d433f4
 });
 
 app.post("/getDoctors",(req,res)=>{
 
 });
 
-app.post("/searchHospitals",(req,res)=>{
-
+app.get("/searchHospital",(req,res)=>{
+    if(req.isAuthenticated()){
+        res.render("hospitals");
+    }else{
+        res.redirect("/");
+}
 });
+
+app.get("/searchResources",(req,res)=>{
+    if(req.isAuthenticated()){
+        res.render("searchMedical");
+    }else{
+        res.redirect("/");
+   } 
+})
 
 app.get("/feed",(req,res)=>{
     if(req.isAuthenticated()){
@@ -191,7 +211,11 @@ app.get("/searchHospitals",(req,res)=>{
 });
 
 app.get("/searchDoctors",(req,res)=>{
-
+    if(req.isAuthenticated()){
+        res.render("doctors")
+    }else{
+        res.redirect("/");
+    }
 });
 
 

@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="/stylesheet/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="manifest" href="images/site.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+<link rel="manifest" href="images/site.webmanifest">
     <script src="https://kit.fontawesome.com/c9bc7b99e6.js" crossorigin="anonymous"></script>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBorXr-thmZ_QBMZYevAMSkNSTKe0fnUPQ&callback=initMap&libraries=&v=weekly"
@@ -60,14 +60,21 @@
                     </ul>
                 </nav>
             </div>
-            <div class="main-section" style="overflow: scroll;">
+            <div class="main-section">
              <div class="hospital-container">
                 <h2 class="heading-primary">
-                    Search Doctors
+                    Search Any Medical Resources Nearby
                 </h2>
-                <button class ="search" style="align-self: center;">Search</button>
+                <div class="search-container" style="display: flex;justify-content: center;">
+                    <input type="text" placeholder="Resource" name="resource" style="align-self: center;">
+                    <button class ="search" style="align-self: center;">Search</button>
+                </div>
+                
+                    <div id="map">
+
+                    </div>
                     <div class="search-hospital-result">
-                        <h2 class="heading-primary">Doctors</h2>
+                        <h2 class="heading-primary">Resources Nearby</h2>
                         <div class="search-result">
                             <ul class="search-result-list">
                                 <li class="search-item">
@@ -85,5 +92,32 @@
              </div>
         </div>
     </main>
+    <script>
+       
+
+        // Initialize and add the map
+        function initMap() {
+          // The location of Uluru
+
+          navigator.geolocation.getCurrentPosition((position)=>{
+            console.log(position.coords);
+            const myposition = {lat:position.coords.latitude,lng:position.coords.longitude};
+            // const uluru = { lat: -25.344, lng: 131.036 };
+          // The map, centered at Uluru
+          const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 15,
+            center: myposition,
+          });
+          // The marker, positioned at Uluru
+          const marker = new google.maps.Marker({
+            position: myposition,
+            map: map,
+          });
+        },(err)=>{
+            console.log(err.message);
+        });
+         
+        }
+      </script>
 </body>
 </html>
