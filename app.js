@@ -149,9 +149,9 @@ app.get('/',(req,res)=>{
 });
 
 
-app.get("/profile/:username",(req,res)=>{
+app.get("/profile",(req,res)=>{
     if(req.isAuthenticated()){
-            console.log(req.user);
+            res.render("profile");
     }else{
         console.log("Something happened");
     }
