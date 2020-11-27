@@ -32,7 +32,7 @@ mongoose.connect("mongodb://localhost:27017/MediCareDb",{useNewUrlParser:true,us
 
 
 app.use(express.static(__dirname+"/public"));
-app.set('view-engine','ejs');
+app.set('view engine', 'ejs'); 
 app.use(BodyParser.urlencoded({extended:true}));
 
 
@@ -63,8 +63,9 @@ app.post("/register/patient",(req,res)=>{
         if (err) { 
           res.status(500).json({message:err.message});
         }else{ 
-            console.log(user);
-          res.status(200).json({user});
+            passport.authenticate("local")(req,res,()=>{
+                res.status(200).json({user});
+            })
         } 
       }); 
 })
@@ -112,7 +113,7 @@ app.post("/login/patient",(req,res)=>{
             res.json({message:err.message});
         }else{
             passport.authenticate("local")(req,res,()=>{
-                res.status(200).json({user});
+                res.redirect("/dashboard");
             })
         }
     });
@@ -132,7 +133,7 @@ app.post("/login/patient",(req,res)=>{
                 res.json({message:err.message});
             }else{
                 passport.authenticate("local")(req,res,()=>{
-                    res.status(200).json({user});
+                    res.redirect("/dashboard");
                 })
             }
         });
@@ -143,7 +144,7 @@ app.post("/login/patient",(req,res)=>{
 
 
 app.get('/',(req,res)=>{
-        res.send("Yeah its Working!!!")
+       res.sendFile(__dirname+"/index.html");
 });
 
 
@@ -156,7 +157,11 @@ app.get("/profile/:username",(req,res)=>{
 });
 
 app.get("/dashboard",(req,res)=>{
-
+    if(req.isAuthenticated()){
+            res.render("dashboard")
+    }else{
+            res.send("Error");
+    }
 });
 
 app.post("/getDoctors",(req,res)=>{
@@ -167,6 +172,17 @@ app.post("/searchHospitals",(req,res)=>{
 
 });
 
+app.get("/feed",(req,res)=>{
+
+})
+
+app.get("/searchHospitals",(req,res)=>{
+
+});
+
+app.get("/searchDoctors",(req,res)=>{
+
+});
 
 
 

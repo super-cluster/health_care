@@ -5,7 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medicare - All in one Medical Facility online</title>
 </head>
-<body>
+<body style="display: flex; flex-direction: column;justify-content: center;height: 100vh;align-items: center;">
+    <div>
+    <form action="/register/patient" method="POST">
+        <h2>Patient Register</h2>
+            <input type="text" placeholder="name" required name="name">
+            <input type="text" placeholder="email" required name="email">
+            <input type="password" placeholder="password" required name="password">
+            <input type="date" placeholder="dob" required name="dob">
+            <input type="text" placeholder="bloodgroup" required name="bloodgroup">
+            <input type="text" placeholder="gender" required name="gender">
+            <button type="submit">Submit</button>
+    </form>
+
+    <form action="/register/doctor" method="POST">
+        <h2>Doctor Register</h2>
+            <input type="text" placeholder="name" required name="name">
+            <input type="text" placeholder="email" required name="email">
+            <input type="password" placeholder="password" required name="password">
+            <input type="text" placeholder="gender" required name="gender">
+
+            <button type="submit">Submit</button>
+    </form>
+
+    <form action="/login/patient" method="POST">
+        <h2>Patient Login</h2>
+            <input type="text" placeholder="username" required name="username">
+            <input type="password" placeholder="password" required name="password">
+            <button type="submit">Submit</button>
+    </form>
+
+    <form action="/login/doctor" method="POST">
+        <h2>Doctor Login</h2>
+            <input type="text" placeholder="username" required name="username">
+            <input type="password" placeholder="password" required name="password">
+
+            <button type="submit">Submit</button>
+    </form>
+</div>
     
 </body>
 </html>
