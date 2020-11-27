@@ -11,6 +11,8 @@ html{
     color: #242439;
 }
 
+
+
 .header-container{
     background-color: white;
     height: 8rem ;
@@ -18,6 +20,7 @@ html{
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.809);
 }
 .logo{
     display: flex;
@@ -35,11 +38,11 @@ html{
     
 }
 .sidebar{
-    background-color: rgb(36, 36, 57);
+    background-color: #524cc1;
     flex: 0 0 18%;
 }
 .main-section{
-    background-color: rgb(230, 230, 230);
+    background-color: rgb(243, 243, 243);
     flex: 1;
     display: flex;
     overflow: scroll;
@@ -47,8 +50,8 @@ html{
 }
 .nav-list .nav-item {
     width: 100%;
-    padding: 2rem;
-    background: linear-gradient(to right, rgb(126, 63, 160),rgb(248, 65, 96));
+    /* padding: 1rem; */
+   
     margin-bottom: 1rem;
 }
 .nav-list .nav-item:last-child{
@@ -63,6 +66,28 @@ html{
     color: white;
     width: 100%;
     font-size: 1.5rem;
+}
+.a-container{
+    padding: 1rem;
+    position: relative;
+    z-index: 10;
+}
+.a-container::before{
+    transform: scaleY(0);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(to right, rgb(63, 76, 160),rgb(65, 215, 248));
+    transition: transform .3s ,width .4s .3s;
+    z-index: -1;
+}
+.a-container:hover:before{
+    width: 100%;
+    transform: scaleY(1);
+    
 }
 .brand{
     font-size: 2.5rem;
@@ -128,6 +153,7 @@ html{
 
 
 
+
 .profile-details-container{
     display: flex;
 }
@@ -180,7 +206,7 @@ html{
 
 }
 .search-result{
-    background-color: rgb(220, 220, 220);
+    background-color: rgb(240, 240, 240);
     height: 100%;
     margin: 1rem;
     overflow-y: scroll;
@@ -188,13 +214,10 @@ html{
 }
 .search{
     outline: none;
-    background: linear-gradient(
-   to right,purple,rgb(226, 112, 131)
-    );
+    background: linear-gradient(to right, rgb(63, 76, 160),rgb(65, 215, 248));
     padding: 1rem;
     color: white;
     font-weight: 700;
-    border-radius: 2rem;
     text-transform: uppercase;
     letter-spacing: 1rem;
     border: none;
@@ -284,12 +307,14 @@ html{
     flex-direction: column;
     justify-content: center;
 }
-.how-to-book-container a{
+.how-to-book-container a,.book-appointment-button{
     color: white;
     background-color: rgb(126, 63, 160);
     text-decoration: none;
     padding: 1rem;
+    border: none;
     font-size: 1.5rem;
+    cursor: pointer;
 }
 .how-to-book-container a:hover{
     background-color: rgb(101, 51, 128);
@@ -304,4 +329,23 @@ html{
 }
 .heading-tertiary{
     font-size: 2rem;
+}
+.a-container{
+ display: flex;
+ align-items: center;
+}
+.doctor-container{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+    background-color: white;
+    flex-direction: column;
+}
+.doctor-info-container{
+    display: flex;
+    
+}
+.big{
+    font-size: 1.5rem;
 }
