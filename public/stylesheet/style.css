@@ -8,6 +8,7 @@
 html{
     font-size: 62.5%;
     font-family: "Lato",sans-serif;
+    color: #242439;
 }
 
 .header-container{
@@ -59,6 +60,7 @@ html{
     text-decoration: none;
     text-transform: uppercase;
     color: white;
+    width: 100%;
 }
 .brand{
     font-size: 2.5rem;
@@ -91,6 +93,15 @@ html{
 .card-normal-normal:first-child{
     margin-top: .2rem;
 }
+.card-appointments{
+    min-height: 15rem;
+    border-radius: 2rem;
+    box-shadow: 0 1rem 2rem rgba(202, 202, 202, 0.639);
+    /* border:.2rem solid gray; */
+    flex: 1;
+    margin:0 2rem;
+
+}
 .heading-primary{
     text-align: center;
     font-size: 2.5rem;
@@ -102,6 +113,14 @@ html{
     color: transparent;
     -webkit-background-clip: text;
     display: inline-block;
+}
+.heading-primary::after{
+    content: "";
+
+}
+.appointments-container{
+    display: flex;
+    width: 100%;
 }
 
 
@@ -136,4 +155,10 @@ html{
 }
 .container{
     height: 100%;
+}
+.heading-secondary{
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 1rem;
+
 }

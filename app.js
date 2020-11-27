@@ -161,7 +161,7 @@ app.get("/dashboard",(req,res)=>{
     if(req.isAuthenticated()){
             res.render("dashboard")
     }else{
-            res.send("Error");
+            res.redirect("/");
     }
 });
 
@@ -174,7 +174,11 @@ app.post("/searchHospitals",(req,res)=>{
 });
 
 app.get("/feed",(req,res)=>{
-
+    if(req.isAuthenticated()){
+        res.render("feed")
+}else{
+        res.redirect("/");
+}
 })
 
 app.get("/searchHospitals",(req,res)=>{
