@@ -1,48 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medicare - All in one Medical Facility online</title>
 </head>
-<body style="display: flex; flex-direction: column;justify-content: center;height: 100vh;align-items: center;">
-    <div>
-    <form action="/register/patient" method="POST">
-        <h2>Patient Register</h2>
-            <input type="text" placeholder="name" required name="name">
-            <input type="text" placeholder="email" required name="username">
-            <input type="password" placeholder="password" required name="password">
-            <input type="date" placeholder="dob" required name="dob">
-            <input type="text" placeholder="bloodgroup" required name="bloodgroup">
-            <input type="text" placeholder="gender" required name="gender">
-            <button type="submit">Submit</button>
-    </form>
-
-    <form action="/register/doctor" method="POST">
-        <h2>Doctor Register</h2>
-            <input type="text" placeholder="name" required name="name">
-            <input type="text" placeholder="email" required name="username">
-            <input type="password" placeholder="password" required name="password">
-            <input type="text" placeholder="gender" required name="gender">
-
-            <button type="submit">Submit</button>
-    </form>
-
-    <form action="/login/patient" method="POST">
-        <h2>Patient Login</h2>
-            <input type="text" placeholder="username" required name="username">
-            <input type="password" placeholder="password" required name="password">
-            <button type="submit">Submit</button>
-    </form>
-
-    <form action="/login/doctor" method="POST">
-        <h2>Doctor Login</h2>
-            <input type="text" placeholder="username" required name="username">
-            <input type="password" placeholder="password" required name="password">
-
-            <button type="submit">Submit</button>
-    </form>
-</div>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* top: 0; */
+}
+.nav-list{
+    width: 50%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+.logo{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo img{
+    color: white;
+}
+.nav-list li{
+   list-style: none;
+   padding: 26px 30px;
+}
+.nav-list li a{
+  text-decoration: none;
+  color: white;
+}
+.right-nav{
+    /* background-color: blueviolet; */
+    width: 50%;
+    /* height: 50%; */
+    text-align: right;
+    margin-right: 4px;
+}
+/* .right-nav .link{
+    margin-right: 4px;
+} */
+.right-nav a{
+    /* padding: 4px 4px; */
+    color: black;
+    margin: 4px 4px;
+    font-size: 20px;
+}
+.container{
+    display: grid;
+    grid-template-columns: 4fr 4fr;
+    margin-top: 28px;
+    grid-column-gap: 4px;
     
-</body>
-</html>
+}
+.item{
+    border: 2px solid black;
+    background-color: rgb(223, 205, 205);
+    padding: 224px 84px;
+    text-align: center;
+}
+.popup{
+    background: rgba(0, 0, 0,0.6); 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.pop-content{
+    height: 250px;
+    width: 500px;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+}
+</style>
+<body>
+    <nav class="navbar">
+        <ul class="nav-list">
+            <div class="logo"><img src="" alt="Medicare"></div>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Contact US</a></li>                       
+        </ul>
+        <div class="right-nav">
+            <a class="link" id="btn" href="#">Log In</a>
+            <a class="link1" id="btn1" href="#">Sign Up</a>
+        </div>
+    </nav> 
+    <div class="container">
+        <div class="item">item-1</div>
+        <div class="item">item-2</div>
+    </div>
+    <div class="popup">
+        <div class="pop-content">
+            hello
+            welcome
+        </div>
+    </div>
+    <script>
+        document.getElementById('btn').addEventListener("click",()=>{
+            document.querySelector('.popup').style.display = "flex";
+        })
+    </script>
+</body >
+</html >

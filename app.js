@@ -157,11 +157,12 @@ app.get("/profile",(req,res)=>{
 });
 
 app.get("/dashboard",(req,res)=>{
-    if(req.isAuthenticated()){
+    // if(req.isAuthenticated()){
             res.render("dashboard")
-    }else{
-            res.send("Error");
-    }
+    // }
+    // else{
+    //         res.send("Error");
+    // }
 });
 
 app.post("/getDoctors",(req,res)=>{
