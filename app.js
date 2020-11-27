@@ -159,10 +159,16 @@ app.get("/profile",(req,res)=>{
 app.get("/dashboard",(req,res)=>{
     // if(req.isAuthenticated()){
             res.render("dashboard")
+<<<<<<< HEAD
     // }
     // else{
     //         res.send("Error");
     // }
+=======
+    }else{
+            res.redirect("/");
+    }
+>>>>>>> c4a7e5f0359b418c894b4d2dec9e3dd91ea57109
 });
 
 app.post("/getDoctors",(req,res)=>{
@@ -174,7 +180,11 @@ app.post("/searchHospitals",(req,res)=>{
 });
 
 app.get("/feed",(req,res)=>{
-
+    if(req.isAuthenticated()){
+        res.render("feed")
+}else{
+        res.redirect("/");
+}
 })
 
 app.get("/searchHospitals",(req,res)=>{
