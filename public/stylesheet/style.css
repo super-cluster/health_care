@@ -1,0 +1,139 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family: "Lato",sans-serif;
+}
+
+.header-container{
+    background-color: white;
+    height: 8rem ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-container{
+    display: flex;
+    min-height: 100vh;
+    
+}
+.sidebar{
+    background-color: rgb(36, 36, 57);
+    flex: 0 0 18%;
+}
+.main-section{
+    background-color: rgb(230, 230, 230);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.nav-list .nav-item {
+    width: 100%;
+    padding: 2rem;
+    background: linear-gradient(to right,rgb(243, 73, 102),rgb(220, 120, 137));
+    margin-bottom: 1rem;
+}
+.nav-list .nav-item:last-child{
+    margin: 0;
+}
+.nav-list .nav-item:first-child{
+    margin-top: 1rem;
+}
+.nav-list .nav-item a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+}
+.brand{
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: .5rem;
+}
+.card{
+    min-height: 30rem;
+    box-shadow: 0 1rem 1rem rgba(147, 147, 147, 0.537);
+    margin-top: 2rem;
+    margin-left:2rem ;
+    margin-right: 2rem;
+    border-radius: .5rem;
+    background-color: white;
+}
+.card-normal{
+    min-height: 30rem;
+    margin-top: 2rem;
+    margin-left:2rem ;
+    margin-right: 2rem;
+    /* border-radius: 1rem; */
+    background-color: white;
+}
+.card-normal-normal{
+    min-height: 30rem;
+    margin-bottom: .2rem;
+    /* border-radius: 1rem; */
+    background-color: white;
+}
+.card-normal-normal:first-child{
+    margin-top: .2rem;
+}
+.heading-primary{
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    background: linear-gradient(to right,purple,lightblue);
+    color: transparent;
+    -webkit-background-clip: text;
+    display: inline-block;
+}
+
+
+
+.profile-details-container{
+    display: flex;
+}
+.profile-details{
+  flex: 0 0 50%;
+}
+.appointments{
+    flex: 1;
+}
+.profile-basic{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 5rem;
+}
+.profile-basic-container{
+    display: flex;
+    /* flex-direction: column; */
+    justify-items: center;
+    align-items: center;
+}
+.detailed-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 80%;
+    margin: 0 2rem;
+}
+.container{
+    height: 100%;
+}
