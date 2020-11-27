@@ -31,7 +31,7 @@ html{
 }
 .main-container{
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
     
 }
 .sidebar{
@@ -42,12 +42,13 @@ html{
     background-color: rgb(230, 230, 230);
     flex: 1;
     display: flex;
+    overflow: scroll;
     flex-direction: column;
 }
 .nav-list .nav-item {
     width: 100%;
     padding: 2rem;
-    background: linear-gradient(to right,rgb(243, 73, 102),rgb(220, 120, 137));
+    background: linear-gradient(to right, rgb(126, 63, 160),rgb(248, 65, 96));
     margin-bottom: 1rem;
 }
 .nav-list .nav-item:last-child{
@@ -61,6 +62,7 @@ html{
     text-transform: uppercase;
     color: white;
     width: 100%;
+    font-size: 1.5rem;
 }
 .brand{
     font-size: 2.5rem;
@@ -94,11 +96,12 @@ html{
     margin-top: .2rem;
 }
 .card-appointments{
-    min-height: 15rem;
+    min-height: 20rem;
     border-radius: 2rem;
-    box-shadow: 0 1rem 2rem rgba(202, 202, 202, 0.639);
+    box-shadow: 0 1rem 3rem rgba(202, 202, 202, 0.891);
     /* border:.2rem solid gray; */
     flex: 1;
+    cursor: pointer;
     margin:0 2rem;
 
 }
@@ -161,4 +164,144 @@ html{
     text-transform: uppercase;
     margin-top: 1rem;
 
+}
+#map{
+    flex: 0 0 40%;
+    margin: 1rem;
+    background-color: white;
+    border-radius: 1rem;
+}
+.search-hospital-result{
+    height: 40vh;
+    background-color: white;
+    border-radius: 1rem;
+    flex: 1;
+    margin-bottom: 1rem;
+
+}
+.search-result{
+    background-color: rgb(220, 220, 220);
+    height: 100%;
+    margin: 1rem;
+    overflow-y: scroll;
+    border-radius: 1rem;
+}
+.search{
+    outline: none;
+    background: linear-gradient(
+   to right,purple,rgb(226, 112, 131)
+    );
+    padding: 1rem;
+    color: white;
+    font-weight: 700;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    border: none;
+    box-shadow: 0 1rem 2rem rgba(81, 81, 81, 0.721);
+    margin: 1rem 0;
+    cursor: pointer;
+}
+.hospital-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.post-container{
+    background-color: white;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-bottom: 5rem;
+    border-radius: .5rem;
+    min-height: 55rem;
+}
+
+.profile-info-container{
+    display: flex;
+    padding-top: 5rem;
+    padding-left: 5rem;
+}
+.doctor-info-container{
+    display: flex;
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+.post-content{
+    min-height: 20rem;
+    background-color: rgb(230, 230, 230);
+    margin: 3rem;
+}
+.profile-info,.doctor-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    margin-left: 2rem;
+}
+.profile-info h2{
+    font-size: 2rem;
+}
+.small{
+    font-size: 1.5rem;
+}
+.suggestions-container{
+    height: 15rem;
+    background-color: rgb(229, 212, 194);
+    overflow-y: scroll;
+   margin-left: 3rem;
+   margin-right: 3rem;
+}
+.suggestion-comment{
+    min-height: 10rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: .3rem;
+    margin: 2rem;
+}
+.time{
+    color: gray;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+.suggestion-content{
+    width: 80%;
+    min-height: 20rem;
+    margin: 0 auto;
+    background-color: rgb(245, 245, 245);
+}
+.problem-description{
+  padding: 2rem;
+ font-size: 2rem;
+}
+.book{
+    display: flex;
+    justify-content: space-around;
+    height: 80%;
+}
+.how-to-book-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.how-to-book-container a{
+    color: white;
+    background-color: rgb(126, 63, 160);
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+.how-to-book-container a:hover{
+    background-color: rgb(101, 51, 128);
+}
+.step-item{
+    list-style: none;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+.step-item:first-child{
+    margin-top: 1rem;
+}
+.heading-tertiary{
+    font-size: 2rem;
 }

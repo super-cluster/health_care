@@ -159,7 +159,7 @@ app.get("/profile",(req,res)=>{
 
 app.get("/dashboard",(req,res)=>{
     if(req.isAuthenticated()){
-            res.render("dashboard")
+            res.render("dashboard");
     }else{
             res.redirect("/");
     }
@@ -169,9 +169,21 @@ app.post("/getDoctors",(req,res)=>{
 
 });
 
-app.post("/searchHospitals",(req,res)=>{
-
+app.get("/searchHospital",(req,res)=>{
+    if(req.isAuthenticated()){
+        res.render("hospitals");
+    }else{
+        res.redirect("/");
+}
 });
+
+app.get("/searchResources",(req,res)=>{
+    if(req.isAuthenticated()){
+        res.render("searchMedical");
+    }else{
+        res.redirect("/");
+   } 
+})
 
 app.get("/feed",(req,res)=>{
     if(req.isAuthenticated()){
@@ -186,7 +198,11 @@ app.get("/searchHospitals",(req,res)=>{
 });
 
 app.get("/searchDoctors",(req,res)=>{
-
+    if(req.isAuthenticated()){
+        res.render("doctors")
+    }else{
+        res.redirect("/");
+    }
 });
 
 
