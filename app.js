@@ -157,25 +157,20 @@ app.get("/profile",(req,res)=>{
 });
 
 app.get("/dashboard",(req,res)=>{
-<<<<<<< HEAD
     // if(req.isAuthenticated()){
             res.render("dashboard");
     // }
-    // else{
-    //         res.send("Error");
-    // }
+    
+//     }else{
+//             res.redirect("/");
+// }
 
-    // }else{
-    //         res.redirect("/");
-    // }
 
-=======
     if(req.isAuthenticated()){
             res.render("dashboard");
     }else{
             res.redirect("/");
     }
->>>>>>> b2de09720717037f5fd3726bdcd087b4d1d433f4
 });
 
 app.post("/getDoctors",(req,res)=>{
