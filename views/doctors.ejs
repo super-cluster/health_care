@@ -40,22 +40,47 @@
                 <nav class="navigation">
                     <ul class="nav-list">
                         <li class="nav-item">
-                            <a href="/dashboard">Home</a>
+                            <a href="/dashboard">
+                                <div class="a-container">
+                                    <i class="fas fa-home fa-2x"></i>&nbsp;Home
+                                </div>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a href="">Book an Appointment</a>
+                            <a href="/searchDoctors">
+                                <div class="a-container">
+                                <i class="fas fa-calendar-check fa-2x"></i>&nbsp;Book an Appointment
+                            </div>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/labTest">Lab Test</a>
+                            <a href="/labTest">
+                                <div class="a-container">
+                                <i class="fas fa-vial fa-2x"></i>&nbsp;Lab Test
+                            </div>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/searchHospital">Search Hospital Nearby</a>
+                            
+                            <a href="/searchHospital">
+                                <div class="a-container">
+                                <i class="fas fa-hospital fa-2x"></i>&nbsp;Search Hospital Nearby
+                               </div>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/searchResources">Medical Resources</a>
+                            <a href="/searchResources">
+                                <div class="a-container">
+                                <i class="fas fa-briefcase-medical fa-2x"></i>&nbsp;Medical Resources
+                            </div>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/feed">Feed</a>
+                            <a href="/feed">
+                                <div class="a-container">
+                                    <i class="fas fa-newspaper fa-2x"></i>&nbsp;Feed
+                                </div>
+                            </a>
                         </li>
                     </ul>
                 </nav>
@@ -65,20 +90,129 @@
                 <h2 class="heading-primary">
                     Search Doctors
                 </h2>
-                <button class ="search" style="align-self: center;">Search</button>
+                <form action="" style="text-align: center;">
+                    <select name="speciality" id="listbox">
+                        <option value="physician">Physian</option>
+                        <option value="cycatrist">Cycatrist</option>
+                        <option value="cardiovascular">CardioVascular</option>
+                        <!-- <option value="audi">Audi</option> -->
+                      </select>
+                    <button class ="search" style="align-self: center;">Search</button>
+                </form>
+                
                     <div class="search-hospital-result">
                         <h2 class="heading-primary">Doctors</h2>
                         <div class="search-result">
                             <ul class="search-result-list">
                                 <li class="search-item">
+                                    <div class="doctor-container">
+                                        <div style="display: flex;align-items: center;justify-content: space-between;">
+                                        <div class="doctor-info-container">
+                                                <div class="profile-image">
+                                                    <img src="/images/profile.png" alt="profile-photo" width="100px" height="100px">
+                                                </div>
+                                                <div class="profile-info">
+                                                    <h2 class="heading-post">Anurag</h2>
+                                                    <p class="big">Speciality : Cardiovascular</p>
+                                                </div>
+                                        
+                                        </div>
+                                        <div class="rating">
+                                            <h2 class="big">Ratings</h2>
+                                            <img src="/images/star.png" alt="star" width="20px" height="20px">
+                                            <img src="/images/star.png" alt="star" width="20px" height="20px">
+                                            <img src="/images/star.png" alt="star" width="20px" height="20px">
+                                            <img src="/images/star.png" alt="star" width="20px" height="20px">
+                                            <img src="/images/star (1).png" alt="star" width="20px" height="20px">
+                                            <p class="small">4.0/5.0</p>
+                                        </div>
 
+                                    </div>
+                                        <button class="book-appointment-button" type="submit" >Book an Appointment</button>
+                                    </div>
                                 </li>
                                 <li class="search-item">
-                                    
+                                    <div class="doctor-container">
+                                        <div style="display: flex;align-items: center;justify-content: space-between;">
+                                        <div class="doctor-info-container">
+                                                <div class="profile-image">
+                                                    <img src="/images/profile.png" alt="profile-photo" width="100px" height="100px">
+                                                </div>
+                                                <div class="profile-info">
+                                                    <h2 class="heading-post">Anurag</h2>
+                                                    <p class="big">Speciality : Cardiovascular</p>
+                                                </div>
+                                        
+                                        </div>
+                                        <div class="rating">
+                                            <h2 class="big">Ratings</h2>
+                                            <img src="/images/star.png" alt="star" width="20px" height="20px">
+                                            <img src="/images/star.png" alt="star" width="20px" height="20px">
+                                            <img src="/images/star.png" alt="star" width="20px" height="20px">
+                                            <img src="/images/star.png" alt="star" width="20px" height="20px">
+                                            <img src="/images/star (1).png" alt="star" width="20px" height="20px">
+                                            <p class="small">4.0/5.0</p>
+                                        </div>
+
+                                    </div>
+                                        <button class="book-appointment-button" type="submit" >Book an Appointment</button>
+                                    </div>
                                 </li>
                                 <li class="search-item">
-                                    
+                                    <div class="doctor-container">
+                                        <div style="display: flex;align-items: center;justify-content: space-between;">
+                                        <div class="doctor-info-container">
+                                                <div class="profile-image">
+                                                    <img src="/images/profile.png" alt="profile-photo" width="100px" height="100px">
+                                                </div>
+                                                <div class="profile-info">
+                                                    <h2 class="heading-post">Anurag</h2>
+                                                    <p class="big">Speciality : Cardiovascular</p>
+                                                </div>
+                                        
+                                        </div>
+                                        <div class="rating">
+                                            <h2 class="big">Ratings</h2>
+                                            <img src="/images/star.png" alt="star" width="20px" height="20px">
+                                            <img src="/images/star.png" alt="star" width="20px" height="20px">
+                                            <img src="/images/star.png" alt="star" width="20px" height="20px">
+                                            <img src="/images/star.png" alt="star" width="20px" height="20px">
+                                            <img src="/images/star (1).png" alt="star" width="20px" height="20px">
+                                            <p class="small">4.0/5.0</p>
+                                        </div>
+
+                                    </div>
+                                        <button class="book-appointment-button" type="submit" >Book an Appointment</button>
+                                    </div>
                                 </li>
+                                <li class="search-item">
+                                    <div class="doctor-container">
+                                        <div style="display: flex;align-items: center;justify-content: space-between;">
+                                        <div class="doctor-info-container">
+                                                <div class="profile-image">
+                                                    <img src="/images/profile.png" alt="profile-photo" width="100px" height="100px">
+                                                </div>
+                                                <div class="profile-info">
+                                                    <h2 class="heading-post">Anurag</h2>
+                                                    <p class="big">Speciality : Cardiovascular</p>
+                                                </div>
+                                        
+                                        </div>
+                                        <div class="rating">
+                                            <h2 class="big">Ratings</h2>
+                                            <img src="/images/star.png" alt="star" width="20px" height="20px">
+                                            <img src="/images/star.png" alt="star" width="20px" height="20px">
+                                            <img src="/images/star.png" alt="star" width="20px" height="20px">
+                                            <img src="/images/star.png" alt="star" width="20px" height="20px">
+                                            <img src="/images/star (1).png" alt="star" width="20px" height="20px">
+                                            <p class="small">4.0/5.0</p>
+                                        </div>
+
+                                    </div>
+                                        <button class="book-appointment-button" type="submit" >Book an Appointment</button>
+                                    </div>
+                                </li>
+                        
                             </ul>
                         </div>
                     </div>
