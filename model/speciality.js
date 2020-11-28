@@ -6,5 +6,6 @@ const speciality =new mongoose.Schema({
    }
 });
 
-const Speciality= mongoose.Model("Speciality",speciality);
+const Speciality = mongoose.model('Speciality',speciality);
+
 module.exports = Speciality;

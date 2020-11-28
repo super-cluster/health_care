@@ -206,10 +206,11 @@ html{
 
 }
 .search-result{
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(224, 224, 224);
     height: 100%;
-    margin: 1rem;
+    margin: 2rem;
     overflow-y: scroll;
+    
     border-radius: 1rem;
 }
 .search{
@@ -349,3 +350,41 @@ html{
 .big{
     font-size: 1.5rem;
 }
+.hospital-item-container{
+    background-color: white;
+    margin: 2rem;
+    border-radius: .5rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+.hospital-info-container{
+    display: flex;
+}
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10000;
+    /* cursor: pointer; */
+  }
+
+  .project-details{
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    overflow: scroll;
+  }
+  .header-profile{
+    display: flex;
+    align-items: center;
+  }

@@ -46,7 +46,11 @@ const doctorScheme = new mongoose.Schema({
         required:false
     },
     qualifications:{
-        type:Array,
+        type:String,
+        required:true
+    },
+    speciality:{
+        type:String,
         required:true
     }
 

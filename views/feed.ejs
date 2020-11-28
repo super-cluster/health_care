@@ -10,10 +10,26 @@
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
 <link rel="manifest" href="images/site.webmanifest">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/c9bc7b99e6.js" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body style="overflow: hidden;">
+    <div id="overlay">
+        <i onclick="off()" style="cursor: pointer;" class="fas fa-times fa-3x"></i>
+        <div class="project-details" style="background-color: white;z-index: 1000;width: 80%;min-height: 250px;display: flex;
+        justify-content: center;flex-direction: column;">
+          <div class="section-heading">
+            <h2 class="heading-primary">Create Post</h2>
+          </div>
+            <form action="/postProblem" method="POST" style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
+            
+                <textarea rows="15" cols="100" type="text" placeholder="Write your Problems Here" name="problem"></textarea>
+                <button style="align-self: center;" type="submit" class="search" id="submit-problem">Submit</button>
+
+            </form>
+        </div>
+        </div>
     <header class="header-container">
             <div class="logo">
                 <img src="images/medical-symbol.png" alt="logo" heigth="50px" width="50px">
@@ -22,7 +38,8 @@
             <div class="links">
                 
             </div>
-            <div class="header-profile">
+            <div class="header-profile" >
+                <a href="/logout">Logout</a>
                 <a href="/profile">
                 <div class="profile-container">
                     <img src="/images/profile.png" alt="profile-photo" heigth="50px" width="50px" style="align-self: stretch;">
@@ -38,21 +55,21 @@
                         <li class="nav-item">
                             <a href="/dashboard">
                                 <div class="a-container">
-                                    <i class="fas fa-home fa-2x"></i>&nbsp;Home
+                                    <i class="fas fa-home fa-2x"></i>&nbsp;&nbsp;Home
                                 </div>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/searchDoctors">
                                 <div class="a-container">
-                                <i class="fas fa-calendar-check fa-2x"></i>&nbsp;Book an Appointment
+                                <i class="fas fa-calendar-check fa-2x"></i>&nbsp;&nbsp;Book an Appointment
                             </div>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/labTest">
                                 <div class="a-container">
-                                <i class="fas fa-vial fa-2x"></i>&nbsp;Lab Test
+                                <i class="fas fa-vial fa-2x"></i>&nbsp;&nbsp;Lab Test
                             </div>
                             </a>
                         </li>
@@ -60,21 +77,21 @@
                             
                             <a href="/searchHospital">
                                 <div class="a-container">
-                                <i class="fas fa-hospital fa-2x"></i>&nbsp;Search Hospital Nearby
+                                <i class="fas fa-hospital fa-2x"></i>&nbsp;&nbsp;Search Hospital Nearby
                                </div>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/searchResources">
                                 <div class="a-container">
-                                <i class="fas fa-briefcase-medical fa-2x"></i>&nbsp;Medical Resources
+                                <i class="fas fa-briefcase-medical fa-2x"></i>&nbsp;&nbsp;Medical Resources
                             </div>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/feed">
                                 <div class="a-container">
-                                    <i class="fas fa-newspaper fa-2x"></i>&nbsp;Feed
+                                    <i class="fas fa-newspaper fa-2x"></i>&nbsp;&nbsp;Feed
                                 </div>
                             </a>
                         </li>
@@ -82,48 +99,53 @@
                 </nav>
             </div>
             <div class="main-section" style="overflow:scroll;height: 100vh;">
+               
                 <h2 class="heading-primary">Feed</h2>
+                <a style="align-self: center;" id="create_post" class="search" href="#">Create Post</a>
                 <ul class="post-list">
-                    <li class="post-item" >
-                        <div class="post-container">
-                            <div class="profile-info-container">
-                                <div class="profile-image">
-                                    <img src="/images/profile.png" alt="profile-photo" width="100px" height="100px">
+                    <% post.forEach(function(item){ %>
+                        <li class="post-item">
+                            <div class="post-container">
+                                <div class="profile-info-container">
+                                    <div class="profile-image">
+                                        <img src="/images/profile.png" alt="profile-photo" width="100px" height="100px">
+                                    </div>
+                                    <div class="profile-info">
+                                        <h2 class="heading-post"><%=item.name%></h2>
+                                        <p class="small"><%=item.username%></p>
+                                        <p class="time"><%=item.createdAt%></p>
+                                    </div>
                                 </div>
-                                <div class="profile-info">
-                                    <h2 class="heading-post">Anurag</h2>
-                                    <p class="small">anuragcooldavkh@gmail.com</p>
-                                    <p class="time">12:00 AM 09:34:15</p>
+                                <div class="post-content">
+                                    <p class="problem-description">
+                                        <%=item.problem%>
+                                    </p>
+                                </div>
+                                <div class="suggestions-container">
+                                    <ul class="suggestion-list">
+                                        <!-- <li class="suggestion-item">
+                                            <div class="suggestion-comment">
+                                                <div class="doctor-info-container">
+                                                    <div class="doctor-image">
+                                                        <img src="/images/doctor.png" alt="profile-photo" width="50px" height="50px">
+                                                    </div>
+                                                    <div class="doctor-info">
+                                                        <h2 class="heading-post">Anurag</h2>
+                                                        <p class="small">MBBS,Phd</p>
+                                                    </div>   
+                        
+                                            </div>
+                                            <div class="suggestion-content">
+                                                        
+                                            </div>
+                                        </li> -->
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="post-content">
-                                <p class="problem-description">
-                                    Is it normal to have a Fever and headache simualtaneously.
-                                </p>
-                            </div>
-                            <div class="suggestions-container">
-                                <ul class="suggestion-list">
-                                    <li class="suggestion-item">
-                                        <div class="suggestion-comment">
-                                            <div class="doctor-info-container">
-                                                <div class="doctor-image">
-                                                    <img src="/images/doctor.png" alt="profile-photo" width="50px" height="50px">
-                                                </div>
-                                                <div class="doctor-info">
-                                                    <h2 class="heading-post">Anurag</h2>
-                                                    <p class="small">MBBS,Phd</p>
-                                                </div>   
-                    
-                                        </div>
-                                        <div class="suggestion-content">
-                                                    
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="post-item">
+                        </li>
+                        <% }) %>
+                   
+                    <!-- <li class="post-item">
                         <div class="post-container">
                             <div class="profile-info-container">
                                 <div class="profile-image">
@@ -186,10 +208,23 @@
                                     </ul>
                             </div>
                         </div>
-                    </li>
+                    </li> -->
                 </ul>
                 
                 </div>
     </main>
+
+    <script>
+        $("#create_post").on("click",(e)=>{
+            e.preventDefault();
+
+            $("#overlay").css({"display":"block"});
+        })
+        function off() {
+        document.getElementById("overlay").style.display = "none";
+        $(".project-details-ul").html("");
+       }
+
+    </script>
 </body>
 </html>

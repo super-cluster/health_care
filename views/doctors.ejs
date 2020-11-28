@@ -6,6 +6,7 @@
     <title>Medicare</title>
     <link rel="stylesheet" href="/stylesheet/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
@@ -27,6 +28,7 @@
                 
             </div>
             <div class="header-profile">
+                <a href="/logout">Logout</a>
                 <a href="/profile">
                     <div class="profile-container">
                         <img src="/images/profile.png" alt="profile-photo" heigth="50px" width="50px">
@@ -42,21 +44,21 @@
                         <li class="nav-item">
                             <a href="/dashboard">
                                 <div class="a-container">
-                                    <i class="fas fa-home fa-2x"></i>&nbsp;Home
+                                    <i class="fas fa-home fa-2x"></i>&nbsp;&nbsp;Home
                                 </div>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/searchDoctors">
                                 <div class="a-container">
-                                <i class="fas fa-calendar-check fa-2x"></i>&nbsp;Book an Appointment
+                                <i class="fas fa-calendar-check fa-2x"></i>&nbsp;&nbsp;Book an Appointment
                             </div>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/labTest">
                                 <div class="a-container">
-                                <i class="fas fa-vial fa-2x"></i>&nbsp;Lab Test
+                                <i class="fas fa-vial fa-2x"></i>&nbsp;&nbsp;Lab Test
                             </div>
                             </a>
                         </li>
@@ -64,21 +66,21 @@
                             
                             <a href="/searchHospital">
                                 <div class="a-container">
-                                <i class="fas fa-hospital fa-2x"></i>&nbsp;Search Hospital Nearby
+                                <i class="fas fa-hospital fa-2x"></i>&nbsp;&nbsp;Search Hospital Nearby
                                </div>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/searchResources">
                                 <div class="a-container">
-                                <i class="fas fa-briefcase-medical fa-2x"></i>&nbsp;Medical Resources
+                                <i class="fas fa-briefcase-medical fa-2x"></i>&nbsp;&nbsp;Medical Resources
                             </div>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/feed">
                                 <div class="a-container">
-                                    <i class="fas fa-newspaper fa-2x"></i>&nbsp;Feed
+                                    <i class="fas fa-newspaper fa-2x"></i>&nbsp;&nbsp;Feed
                                 </div>
                             </a>
                         </li>
@@ -92,19 +94,18 @@
                 </h2>
                 <form action="" style="text-align: center;">
                     <select name="speciality" id="listbox">
-                        <option value="physician">Physian</option>
-                        <option value="cycatrist">Cycatrist</option>
-                        <option value="cardiovascular">CardioVascular</option>
-                        <!-- <option value="audi">Audi</option> -->
+                        <% speciality.forEach(function(item){ %>
+                            <option value="<%=item.speciality%>"><%=item.speciality%></option>
+                            <% }) %>
                       </select>
-                    <button class ="search" style="align-self: center;">Search</button>
+                    <button id="search_doctor" class ="search" style="align-self: center;">Search</button>
                 </form>
-                
+                    
                     <div class="search-hospital-result">
                         <h2 class="heading-primary">Doctors</h2>
                         <div class="search-result">
                             <ul class="search-result-list">
-                                <li class="search-item">
+                                <!-- <li class="search-item">
                                     <div class="doctor-container">
                                         <div style="display: flex;align-items: center;justify-content: space-between;">
                                         <div class="doctor-info-container">
@@ -211,7 +212,7 @@
                                     </div>
                                         <button class="book-appointment-button" type="submit" >Book an Appointment</button>
                                     </div>
-                                </li>
+                                </li> -->
                         
                             </ul>
                         </div>
@@ -219,5 +220,6 @@
              </div>
         </div>
     </main>
+    <script src="/js/doctor.js" ></script>
 </body>
 </html>
